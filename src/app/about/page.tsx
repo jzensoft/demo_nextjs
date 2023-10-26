@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Props {}
 
 export default async function About(props: Props) {
@@ -8,7 +10,12 @@ export default async function About(props: Props) {
     <div>
       <ul>
         {users.map((user: any) => (
-          <li key={user.id}>{user.name}</li>
+          <li key={user.id}>
+            <p>
+              <Image src={"/dog.jpg"} alt="" width={50}  height={50}/>
+              {user.name}
+            </p>
+          </li>
         ))}
       </ul>
     </div>
